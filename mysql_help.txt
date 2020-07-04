@@ -1,0 +1,11 @@
+List of commands
+1 sudo apt update
+2 sudo apt upgrade
+3 sudo apt install gnupg
+4 wget http://repo.mysql.com/mysql-apt-confi...
+5 sudo dpkg -i mysql-apt-config_0.8.13-1_all.deb
+6 sudo apt update
+7 sudo apt install mysql-server
+8 sudo systemctl status mysql
+9 sudo mysql_secure_installation
+10 mysql -u root -p
