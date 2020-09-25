@@ -106,12 +106,16 @@ Lightweight pattern match use to e.g. `df.columns.contains('somestring', ignorec
 >>> sentence = ['this','is','a','sentence']
 >>> '-'.join(sentence)
 'this-is-a-sentence'
-        **or**
+```
+**or**
+```
 >>> my_lst = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 >>> my_lst_str = ''.join(map(str, my_lst))
 >>> print(my_lst_str)
 '12345678910'
-      **or**
+```
+**or**
+```
 from str import join
 
 sentence = ['this','is','a','sentence']
@@ -123,15 +127,19 @@ from functools import reduce
 sentence = ['this','is','a','sentence']
 out_str = str(reduce(lambda x,y: x+"-"+y, sentence))
 print(out_str)
-      **or**
+```
+**or**
+```
 arr=['a','b','h','i']     # let this be the list
 s=""                      # creating a empty string
 for i in arr:
    s+=i                   # to form string without using any function
 print(s) 
-      **or**
+```
+**or**
+```
 
-**Without .join() :**
+Without .join() :
 
 my_list=["this","is","a","sentence"]
 
@@ -142,7 +150,7 @@ for string in range(len(my_list)):
     else:
         concenated_string+=f'{my_list[string]}-'
 print([concenated_string])
-    >>> ['this-is-a-sentence']
+>>> ['this-is-a-sentence']
 
 ```
 ### dict to dataframe
