@@ -98,7 +98,54 @@ Probably add `dropna=False` every time _caveat_ this means we easily miss NaN va
 
 ### `str.contains`
 
-Lightweight pattern match use to e.g. `df.columns.contains('somestring', ignorecase=True)` to find substring `somestring` in column names, returns a mask.
+Lightweight pattern match use to e.g. `df.columns.contains('somestring', ignorecase=True)` to find substring 
+`somestring` in column names, returns a mask.
+
+### concatenate list items
+```
+>>> sentence = ['this','is','a','sentence']
+>>> '-'.join(sentence)
+'this-is-a-sentence'
+        **or**
+>>> my_lst = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+>>> my_lst_str = ''.join(map(str, my_lst))
+>>> print(my_lst_str)
+'12345678910'
+      **or**
+from str import join
+
+sentence = ['this','is','a','sentence']
+
+join(sentence, "-") 
+      **or**
+from functools import reduce
+
+sentence = ['this','is','a','sentence']
+out_str = str(reduce(lambda x,y: x+"-"+y, sentence))
+print(out_str)
+      **or**
+arr=['a','b','h','i']     # let this be the list
+s=""                      # creating a empty string
+for i in arr:
+   s+=i                   # to form string without using any function
+print(s) 
+      **or**
+
+**Without .join() :**
+
+my_list=["this","is","a","sentence"]
+
+concenated_string=""
+for string in range(len(my_list)):
+    if string == len(my_list)-1:
+        concenated_string+=my_list[string]
+    else:
+        concenated_string+=f'{my_list[string]}-'
+print([concenated_string])
+    >>> ['this-is-a-sentence']
+
+```
+
 
 ### To remove white spaces:
 ```
