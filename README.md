@@ -145,6 +145,75 @@ print([concenated_string])
     >>> ['this-is-a-sentence']
 
 ```
+### dict to dataframe
+```
+my_dict = {key:value,key:value,key:value,...}
+df = pd.DataFrame(list(my_dict.items()),columns = ['column1','column2']) 
+```
+### Muliple file merging
+```
+import pandas as pd
+import glob
+
+path = r'C:\DRO\DCL_rawdata_files' # use your path
+all_files = glob.glob(path + "/*.csv")
+
+li = []
+
+for filename in all_files:
+    df = pd.read_csv(filename, index_col=None, header=0)
+    li.append(df)
+
+frame = pd.concat(li, axis=0, ignore_index=True)
+```
+**or**
+```
+path = r'C:\DRO\DCL_rawdata_files'                     # use your path
+all_files = glob.glob(os.path.join(path, "*.csv"))     # advisable to use os.path.join as this makes concatenation OS independent
+
+df_from_each_file = (pd.read_csv(f) for f in all_files)
+concatenated_df   = pd.concat(df_from_each_file, ignore_index=True)
+# doesn't create a list, nor does it append to one
+```
+**or**
+```
+import glob, os    
+df = pd.concat(map(pd.read_csv, glob.glob(os.path.join('', "my_files*.csv"))))
+```
+**or**
+```
+For a few files - 1 liner:
+
+df = pd.concat(map(pd.read_csv, ['data/d1.csv', 'data/d2.csv','data/d3.csv']))
+
+For many files:
+
+from os import listdir
+
+filepaths = [f for f in listdir("./data") if f.endswith('.csv')]
+df = pd.concat(map(pd.read_csv, filepaths))
+```
+**or**
+```
+import glob
+
+df = pd.concat(map(pd.read_csv, glob.glob('data/*.csv')))
+```
+
+```
+from glob import iglob
+import pandas as pd
+
+path = r'C:\user\your\path\**\*.csv'
+
+all_rec = iglob(path, recursive=True)     
+dataframes = (pd.read_csv(f) for f in all_rec)
+big_dataframe = pd.concat(dataframes, ignore_index=True)
+
+Note that the three last lines can be expressed in one single line:
+
+df = pd.concat((pd.read_csv(f) for f in iglob(path, recursive=True)), ignore_index=True)
+```
 
 ### Vaidating the existance of a sheet in an excel workbook
 ```from openpyxl import load_workbook
