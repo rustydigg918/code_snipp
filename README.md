@@ -100,6 +100,82 @@ Probably add `dropna=False` every time _caveat_ this means we easily miss NaN va
 
 Lightweight pattern match use to e.g. `df.columns.contains('somestring', ignorecase=True)` to find substring `somestring` in column names, returns a mask.
 
+### To remove white spaces:
+```
+1) To remove white space everywhere:
+
+df.columns = df.columns.str.replace(' ', '')
+
+2) To remove white space at the beginning of string:
+
+df.columns = df.columns.str.lstrip()
+
+3) To remove white space at the end of string:
+
+df.columns = df.columns.str.rstrip()
+
+4) To remove white space at both ends:
+
+df.columns = df.columns.str.strip()
+
+    To replace white spaces with other characters (underscore for instance):
+
+5) To replace white space everywhere
+
+df.columns = df.columns.str.replace(' ', '_')
+
+6) To replace white space at the beginning:
+
+df.columns = df.columns.str.replace('^ +', '_')
+
+7) To replace white space at the end:
+
+df.columns = df.columns.str.replace(' +$', '_')
+
+8) To replace white space at both ends:
+
+df.columns = df.columns.str.replace('^ +| +$', '_')
+
+All above applies to a specific column as well, assume you have a column named col, then just do:
+
+df[col] = df[col].str.strip()  # or .replace as above
+```
+
+### find index of value anywhere in DataFrame
+```
+for row in range(df.shape[0]): # df is the DataFrame
+         for col in range(df.shape[1]):
+             if df.get_value(row,col) == 'security_id':
+                 print(row, col)
+                 break
+```
+### reading Excel/CSV file starting from the row below that with a specific value
+```
+
+df = pd.read_excel('your/path/filename')
+```
+
+**This answer helps in finding the location of 'start' in the df**
+```
+ for row in range(df.shape[0]): 
+
+       for col in range(df.shape[1]):
+
+           if df.iat[row,col] == 'start':
+
+             row_start = row
+             break
+```
+
+**after having row_start you can use subframe of pandas**
+```
+df_required = df.loc[row_start:]
+```
+**And if you don't need the row containing 'start', just u increment row_start by 1**
+```
+df_required = df.loc[row_start+1:]
+```
+
 ### formatting
 
 `vc.apply(lambda v: f"{v*100:.0f}%")` turn a `value_counts` into percentages like "92%"
