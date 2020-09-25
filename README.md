@@ -287,3 +287,12 @@ Check dataframe cols as I go
 ## link
 
 `ln -s other_folder_file .` link the other file into this folder.
+
+
+# Jupyter Notebook
+
+## Notebook Formatting
+`pd.set_option('display.max_rows', None)`
+`pd.set_option('display.max_columns', None)`
+`pd.set_option('display.width', None)`
+`pd.set_option('display.max_colwidth', None)`
