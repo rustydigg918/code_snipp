@@ -146,6 +146,18 @@ print([concenated_string])
 
 ```
 
+### Vaidating the existance of a sheet in an excel workbook
+```from openpyxl import load_workbook
+ 
+wb = load_workbook(file_workbook, read_only=True)   # open an Excel file and return a workbook
+    
+if 'sheet1' in wb.sheetnames:
+    print('sheet1 exists')
+```
+**Note:** The Python library openpyxl is designed for reading and writing Excel xlsx/xlsm/xltx/xltm files. The following snippet code checks if a specific sheet name exists in a given workbook.
+
+*For older Microsoft Excel files (i.e., .xls), use xlrd and xlwt instead.*
+
 
 ### To remove white spaces:
 ```
