@@ -176,6 +176,15 @@ df_required = df.loc[row_start:]
 df_required = df.loc[row_start+1:]
 ```
 
+### Converting data while loading by calling a function in `converters`
+```
+file = "Books.xls"
+def convert_author_cell(cell):
+    if cell == "Hilary":
+        return 'visly'
+    return cell
+data = pd.read_excel(file,converters={'Author':convert_author_cell})
+```
 ### formatting
 
 `vc.apply(lambda v: f"{v*100:.0f}%")` turn a `value_counts` into percentages like "92%"
