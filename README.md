@@ -58,6 +58,9 @@ Categoricals have a non-obvious memory behaviour in 1.0 in `groupby`, must pass 
 
 `utc=True` will set timezone (else no tz info). Lowest valid date we can parse is circa `pd.to_datetime('1677-09-22', utc=True)` (21st will raise a `OutOfBoundsDatetime` unless `errors="ignore"` passed, if this is passed then we get a string back in place! use `coerce` to get `NaT` for invalid times) - limitations: https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html#timestamp-limitations . Error handling: https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html#invalid-data
 
+### `extract`
+Pandas is full of text management tool to implement to extract capture groups in the regex pattern as columns in a DataFrame: (official documentation of the feature, e.g {tmp['month'] = tmp.FileName.str.extract('(jun|july|aug|mar|apr|may)', expand = False).str.strip()} Find its params here: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.str.extract.html)
+
 ### `cut`
 
 Pandas is closed-right by default i.e. with `right=True` (default) then bins are `(b1, b2]` (exclusive/open of left, inclusive/closed of right: https://en.wikipedia.org/wiki/Bracket_(mathematics) ). https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.cut.html
