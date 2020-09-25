@@ -292,22 +292,24 @@ Check dataframe cols as I go
 
 ## Showing all the files with its directory extension inside a master directory
 
-  `
-  for path, subdirs, files in os.walk(r"C:\Users\pushkar\Downloads\Puma_Audit Master - Copy"):
-    for name in files:
-        file_path_main = os.path.join(path, name)
-        print(file_path_main)
-  `
+  ```
+    for path, subdirs, files in os.walk(r"C:\Users\pushkar\Downloads\Puma_Audit Master - Copy"):
+      for name in files:
+          file_path_main = os.path.join(path, name)
+          print(file_path_main)
+  ```
 
 
 
 # Jupyter Notebook
 
 ## Notebook Formatting
-`pd.set_option('display.max_rows', None)`
+```
+  pd.set_option('display.max_rows', None)
 
-`pd.set_option('display.max_columns', None)`
+  pd.set_option('display.max_columns', None)
 
-`pd.set_option('display.width', None)`
+  pd.set_option('display.width', None)
 
-`pd.set_option('display.max_colwidth', None)`
+  pd.set_option('display.max_colwidth', None)
+```
