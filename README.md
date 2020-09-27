@@ -534,3 +534,29 @@ Check dataframe cols as I go
 
   pd.set_option('display.max_colwidth', None)
 ```
+
+# EDA
+
+### Univeriate Analysis
+```
+<Bar Plot>
+fig, axes = plt.subplots(5, 2, figsize=(14, 22))
+axes = [ax for axes_row in axes for ax in axes_row]
+
+for i, c in enumerate(train[cat_cols]):
+    _ = train[c].value_counts()[::-1].plot(kind = 'pie', ax=axes[i], title=c, autopct='%.0f', fontsize=12)
+    _ = axes[i].set_ylabel('')
+    
+_ = plt.tight_layout()
+```
+
+```
+<Count Plot>
+fig, axes = plt.subplots(3, 3, figsize=(16, 16))
+axes = [ax for axes_row in axes for ax in axes_row]
+
+for i, c in enumerate(train[cat_cols]):
+    _ = train[c].value_counts()[::-1].plot(kind = 'barh', ax=axes[i], title=c, fontsize=14)
+    
+_ = plt.tight_layout()
+```
