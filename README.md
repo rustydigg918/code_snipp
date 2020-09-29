@@ -54,7 +54,7 @@ You can change the location of each label inside of the grid cell using the stic
 The letters "n", "s", "e", and "w" come from the cardinal directions north, south, east, and west.
 ```
 
-### Responsive buiscuits
+### Responsive biscuits
 ```
 import tkinter as tk
 
@@ -243,6 +243,35 @@ btn_clear = tk.Button(master=frm_buttons, text="Clear")
 btn_clear.pack(side=tk.RIGHT, ipadx=10)
 
 # Start the application
+window.mainloop()
+```
+### Basic app architecture
+```
+import tkinter as tk
+
+def increase():
+    value = int(lbl_value["text"])
+    lbl_value["text"] = f"{value + 1}"
+
+
+def decrease():
+    value = int(lbl_value["text"])
+    lbl_value["text"] = f"{value - 1}"
+
+window = tk.Tk()
+
+window.rowconfigure(0, minsize=50, weight=1)
+window.columnconfigure([0, 1, 2], minsize=50, weight=1)
+
+btn_decrease = tk.Button(master=window, text="-", command=decrease)
+btn_decrease.grid(row=0, column=0, sticky="nsew")
+
+lbl_value = tk.Label(master=window, text="0")
+lbl_value.grid(row=0, column=1)
+
+btn_increase = tk.Button(master=window, text="+", command=increase)
+btn_increase.grid(row=0, column=2, sticky="nsew")
+
 window.mainloop()
 ```
 
