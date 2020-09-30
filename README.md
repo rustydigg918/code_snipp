@@ -36,6 +36,16 @@
 
 ## TKINTER
 
+### Basic Widget
+```
+Widget Class 	Description
+Label 	A widget used to display text on the screen
+Button 	A button that can contain text and can perform an action when clicked
+Entry 	A text entry widget that allows only a single line of text
+Text 	A text entry widget that allows multiline text entry
+Frame 	A rectangular region used to group related widgets or provide padding between widgets
+```
+
 ```
 .grid() 	    .pack()
 sticky="ns" 	fill=tk.Y
