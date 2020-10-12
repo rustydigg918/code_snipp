@@ -34,54 +34,7 @@
 
 * Matplotlib label formatter - take int/float labels and convert to eg currency (2dp), human readable (e.g. 1M), optional leading symbol (e.g. £, $) or trailing text (e.g. pp.), with commas (e.g. "2,000") `friendly_label(dp=2, leading_text="", following_text="", with_commas=False, ints_if_possible=False)` and `human_readable(...)`
 
-## Needed Packages
 
-### pytest
-```
-testing library for python
-```
-
-### mypy
-```
-Typechecking for python
-```
-### pdb
-```python debugger
-```
-### pydoc
-```
-C:\Users\pushkar>python -m pydoc
-pydoc - the Python documentation tool
-```
-```
-pydoc <name> ...
-    Show text documentation on something.  <name> may be the name of a
-    Python keyword, topic, function, module, or package, or a dotted
-    reference to a class or function within a module or module in a
-    package.  If <name> contains a '\', it is used as the path to a
-    Python source file to document. If name is 'keywords', 'topics',
-    or 'modules', a listing of these things is displayed.
-
-pydoc -k <keyword>
-    Search for a keyword in the synopsis lines of all available modules.
-
-pydoc -n <hostname>
-    Start an HTTP server with the given hostname (default: localhost).
-
-pydoc -p <port>
-    Start an HTTP server on the given port on the local machine.  Port
-    number 0 can be used to get an arbitrary unused port.
-
-pydoc -b
-    Start an HTTP server on an arbitrary unused port and open a Web browser
-    to interactively browse documentation.  This option can be used in
-    combination with -n and/or -p.
-
-pydoc -w <name> ...
-    Write out the HTML documentation for a module to a file in the current
-    directory.  If <name> contains a '\', it is treated as a filename; if
-    it names a directory, documentation is written for all the contents.
-```
 
 ## TKINTER
 
@@ -823,6 +776,47 @@ Typically we'd write `pytest` to execute it, there's something weird with being 
 ### `pdb`
 
 In IPython `pdb.run("scipy.stats.power_divergence(o, axis=None, ddof=2, lambda_='log-likelihood')")` will invoke `pdb`, use `s` to step into the function, `n` for the next line, `p` to print state (use this to see that `f_exp` is calculated in an unexpected way, see Statistical tests below). `b _count` will set a breakpoint for the `_count` function inside `power_divergence`, run to it with `c`.
+
+### mypy
+```
+Typechecking for python
+```
+## Documentation
+
+### pydoc
+```
+C:\Users\pushkar>python -m pydoc
+pydoc - the Python documentation tool
+```
+```
+pydoc <name> ...
+    Show text documentation on something.  <name> may be the name of a
+    Python keyword, topic, function, module, or package, or a dotted
+    reference to a class or function within a module or module in a
+    package.  If <name> contains a '\', it is used as the path to a
+    Python source file to document. If name is 'keywords', 'topics',
+    or 'modules', a listing of these things is displayed.
+
+pydoc -k <keyword>
+    Search for a keyword in the synopsis lines of all available modules.
+
+pydoc -n <hostname>
+    Start an HTTP server with the given hostname (default: localhost).
+
+pydoc -p <port>
+    Start an HTTP server on the given port on the local machine.  Port
+    number 0 can be used to get an arbitrary unused port.
+
+pydoc -b
+    Start an HTTP server on an arbitrary unused port and open a Web browser
+    to interactively browse documentation.  This option can be used in
+    combination with -n and/or -p.
+
+pydoc -w <name> ...
+    Write out the HTML documentation for a module to a file in the current
+    directory.  If <name> contains a '\', it is treated as a filename; if
+    it names a directory, documentation is written for all the contents.
+```
 
 
 ## Statistical tests
