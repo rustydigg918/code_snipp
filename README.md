@@ -113,7 +113,7 @@ You can change the location of each label inside of the grid cell using the stic
 The letters "n", "s", "e", and "w" come from the cardinal directions north, south, east, and west.
 ```
 
-### Responsive biscuits
+### Responsive biscuits"from server
 ```
 import tkinter as tk
 
