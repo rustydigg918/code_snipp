@@ -34,6 +34,23 @@
 
 * Matplotlib label formatter - take int/float labels and convert to eg currency (2dp), human readable (e.g. 1M), optional leading symbol (e.g. £, $) or trailing text (e.g. pp.), with commas (e.g. "2,000") `friendly_label(dp=2, leading_text="", following_text="", with_commas=False, ints_if_possible=False)` and `human_readable(...)`
 
+## Creating Virtual Environment
+
+**Method 1: Using venv**
+
+>Creating the environmant
+>>python -m venv *env_name*
+>Activating the environment
+>> env_name\Scripts\activate
+
+**Method 2: Using virtualenv**
+>Creating the environment
+>>virtualenv *env_name*
+>Activating the environment
+>> env_name\Scripts\activate
+
+
+
 
 
 ## TKINTER
