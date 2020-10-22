@@ -40,6 +40,7 @@
 
 >Creating the environmant
 >>python -m venv *env_name*
+
 >Activating the environment
 >> env_name\Scripts\activate
 
