@@ -34,6 +34,12 @@
 
 * Matplotlib label formatter - take int/float labels and convert to eg currency (2dp), human readable (e.g. 1M), optional leading symbol (e.g. £, $) or trailing text (e.g. pp.), with commas (e.g. "2,000") `friendly_label(dp=2, leading_text="", following_text="", with_commas=False, ints_if_possible=False)` and `human_readable(...)`
 
+## sys.argv
+    `sys.argv` is a list.
+    `sys.argv` is always available.
+    `sys.argv` will always have atleast one item(a string with program name).
+    Any argument passed at the command line will also be added to the `sys.argv` list.
+    We can check to see if any arguments have been passed by checking the len() of `sys.argv`.
 ## Creating Virtual Environment
 
 **Method 1: Using venv**
