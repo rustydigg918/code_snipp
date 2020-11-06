@@ -13,6 +13,27 @@
 * What single thing might give us 80% of the remaining answer? Probably avoid the edge cases (document, but don't focus on them)
   * Identify the most valuable deliverables (most-derisking, most-value-yielding) to rank opportunities
 * Milestones - list some, note what each enables
+* Steps followd for approaching a classification problem.
+    
+        1 Problem Statement
+        2 Hypothesis Generation
+        3 Getting the system ready and loading the data.
+        4 Understanding the dat
+        5 EDA
+            - Univariate
+            - Bivariate
+            - Multivairate
+        6 Missing values and outlier treatment
+        7 Evaluation matrics for classification problem.
+        8 Model building part -1
+        9 Logistic regression using stratified k-fold cross validation
+        10 Feature engineering
+        11 Model building part -2
+            - Logistic Regression
+            - Decision trees
+            - Random forest
+            - Xgboost
+
 
 ## Strategy
 
