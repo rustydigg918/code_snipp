@@ -33,6 +33,40 @@
             - Decision trees
             - Random forest
             - Xgboost
+* Evaluation Matrics for Classification Problems.
+    
+    ```
+    The process of model building is not complete without evaluation of model’s performance. Suppose we have the predictions from the model, how can we decide whether the predictions are accurate? We can plot the results and compare them with the actual values, i.e. calculate the distance between the predictions and actual values. Lesser this distance more accurate will be the predictions. Since this is a classification problem, we can evaluate our models using any one of the following evaluation metrics:
+
+- Accuracy: Let us understand it using the confusion matrix which is a tabular representation of Actual vs Predicted values. This is how a confusion matrix looks like:
+
+    ![confusion](confusion_matrix.png)
+
+- True Positive - Targets which are actually true(Y) and we have predicted them true(Y)
+- True Negative - Targets which are actually false(N) and we have predicted them false(N)
+- False Positive - Targets which are actually false(N) but we have predicted them true(T)
+- False Negative - Targets which are actually true(T) but we have predicted them false(N)
+
+- Using these values, we can calculate the accuracy of the model. The accuracy is given by:
+    ![confusion](formula_postConfusion.png)
+
+- Precision: : It is a measure of correctness achieved in true prediction i.e. of observations labeled as true, how many are actually labeled true.
+- `Precision = TP / (TP + FP)`
+- Recall(Sensitivity):  - It is a measure of actual observations which are predicted correctly i.e. how many observations of true class are labeled correctly. It is also known as ‘Sensitivity’.
+- `Recall = TP / (TP + FN)`
+- Specificity:  - It is a measure of how many observations of false class are labeled correctly.
+- `Specificity = TN / (TN + FP)`
+- Specificity and Sensitivity plays a crucial role in deriving ROC curve.
+- ROC Curve
+- Receiver Operating Characteristic(ROC) summarizes the model’s performance by evaluating the trade offs between true positive rate (sensitivity) and false positive rate(1- specificity).
+- The area under curve (AUC), referred to as index of accuracy(A) or concordance index, is a perfect performance metric for ROC curve. Higher the area under curve, better the prediction power of the model.
+- This is how a ROC curve looks like:
+    ![ROC](ROC_Curve.png)
+- The area of this curve measures the ability of the model to correctly classify true positives and true negatives. We want our model to predict the true classes as true and false classes as false.
+- So it can be said that we want the true positive rate to be 1. But we are not concerned with the true positive rate only but the false positive rate too. For example in our problem, we are not only concerned about predicting the Y classes as Y but we also want N classes to be predicted as N.
+- We want to increase the area of the curve which will be maximum for class 2,3,4 and 5 in the above example.
+- For class 1 when the false positive rate is 0.2, the true positive rate is around 0.6. But for class 2 the true positive rate is 1 at the same false positive rate. So, the AUC for class 2 will be much more as compared to the AUC for class 1. So, the model for class 2 will be better.
+- The class 2,3,4 and 5 model will predict more accurately as compared to the class 0 and 1 model as the AUC is more for those classes.
 
 
 ## Strategy
