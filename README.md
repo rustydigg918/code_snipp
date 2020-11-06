@@ -13,7 +13,7 @@
 * What single thing might give us 80% of the remaining answer? Probably avoid the edge cases (document, but don't focus on them)
   * Identify the most valuable deliverables (most-derisking, most-value-yielding) to rank opportunities
 * Milestones - list some, note what each enables
-* Steps followd for approaching a classification problem.
+* Steps followed for approaching a classification problem.
     
         1 Problem Statement
         2 Hypothesis Generation
