@@ -728,6 +728,14 @@ def show_all(many_rows, max_rows=999):
 
 `query` with `NaN` rows is a pain, for text columns we could replace missing data with `-` and then that's another string-like thing for a query, this significantly simplifies the queries.
 
+### Delete rows from a pandas DataFrame based on a conditional expression
+```
+1. df[df['column name'].map(len) < 2]
+2. df.drop(df[df.score < 50].index, inplace=True)
+3. df = df.drop(df[(df.score < 50) & (df.score > 20)].index)
+
+```
+
 ## matplotlib
 
 ### my style (?)
