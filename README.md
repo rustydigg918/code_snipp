@@ -733,9 +733,14 @@ def show_all(many_rows, max_rows=999):
 1. df[df['column name'].map(len) < 2]
 2. df.drop(df[df.score < 50].index, inplace=True)
 3. df = df.drop(df[(df.score < 50) & (df.score > 20)].index)
-
 ```
+### Drop rows containing empty cells from a pandas DataFrame
+```
+There's a situation where the cell has white space, you can't see it, use to replace white space as NaN, then 
+    >df['col'].replace('  ', np.nan, inplace=True)
 
+>>>df= df.dropna(subset=['col'])
+```
 ## matplotlib
 
 ### my style (?)
