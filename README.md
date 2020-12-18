@@ -725,6 +725,16 @@ def show_all(many_rows, max_rows=999):
 ```
 
 ### Data processing tips
+**Dictionary of lists to dataframe**
+```
+d={
+    'key1': [10, 100.1, 0.98, 1.2],
+    'key2': [72.5],
+    'key3': [1, 5.2, 71.2, 9, 10.11, 12.21, 65, 7]
+}
+
+df=pd.DataFrame.from_dict(d,orient='index').transpose()
+```
 
 `query` with `NaN` rows is a pain, for text columns we could replace missing data with `-` and then that's another string-like thing for a query, this significantly simplifies the queries.
 
